@@ -7,12 +7,11 @@ if [[ ! `whoami` = "root" ]]; then
     exit 1
 fi
 
-wget https://download.java.net/openjdk/jdk8u41/ri/openjdk-8u41-b04-linux-x64-14_jan_2020.tar.gz
-
+wget https://www.oracle.com/webapps/redirect/signon?nexturl=https://download.oracle.com/otn/java/jdk/8u301-b09/d3c52aa6bfa54d3ca74e617f18309292/jdk-8u301-linux-aarch64.tar.gz
 # Check that the file is a JDK archive
-if [[ ! $1 =~ openjdk-[0-9]{1}u[0-9]{1,2}.*\.tar\.gz ]]; then
+if [[ ! $1 =~ jdk-[0-9]{1}u[0-9]{1,2}.*\.tar\.gz ]]; then
     echo "'$1' doesn't look like a JDK archive."
-    echo "The file name should begin 'openjdk-XuYY', where X is the version number and YY is the update number."
+    echo "The file name should begin 'jdk-XuYY', where X is the version number and YY is the update number."
     echo "Please re-name the file, or download the JDK again and keep the default file name."
     exit 2
 fi
