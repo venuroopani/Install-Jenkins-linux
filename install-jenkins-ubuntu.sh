@@ -26,7 +26,7 @@ apt-get install unzip -y
 if java -version | grep -q "java version" ; then
   echo "Java Installed"
 else
-  sudo add-apt-repository ppa:webupd8team/java -y  && sudo apt-get update -y  && echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections && sudo apt-get install oracle-java8-installer -y && echo JAVA_HOME=/usr/lib/jvm/java-8-oracle >> /etc/environment && echo JRE_HOME=/usr/lib/jvm/java-8-oracle/jre >> /etc/environment && source /etc/environment
+  apt-get update | apt-get install openjdk-8-jre-headless -y
 fi
 
 # Install Tomcat
