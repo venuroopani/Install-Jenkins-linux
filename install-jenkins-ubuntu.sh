@@ -26,7 +26,7 @@ apt-get install unzip -y
 if java -version | grep -q "java version" ; then
   echo "Java Installed"
 else
-  apt-get update | apt-get install openjdk-8-jre-headless -y
+  add-apt-repository ppa:webupd8team/java -y | apt-get update | apt-get install oracle-java8-installer -y
 fi
 
 # Install Tomcat
